@@ -1,0 +1,17 @@
+<?php
+/**
+ * Copyright © Funky Squid Labs Ltd. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \FunkySquid\CustomerAuth\Block\CustomerAuth $block */
+?>
+
+<div class="customer-auth">
+    <?php if ($block->isLoggedIn()): ?>
+        <a href="<?php echo $block->getAccountUrl(); ?>">My Account</a>
+        <a href="<?php echo $block->getLogoutUrl(); ?>">Sign Out</a>
+    <?php else: ?>
+        <a href="<?php echo $block->getLoginUrl(); ?>">Sign In</a>
+    <?php endif; ?>
+</div>
